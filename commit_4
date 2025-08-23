@@ -1,0 +1,20 @@
+import java.io.Console;
+
+public class Login {
+    public static void main(String[] args) {
+        Console console = System.console();
+        if (console == null) {
+            System.out.println("Console not available.");
+            return;
+        }
+
+        String username = console.readLine("Username: ");
+        char[] password = console.readPassword("Password: ");
+
+        if (username.equals("admin") && String.valueOf(password).equals("1234")) {
+            System.out.println("Login successful!");
+        } else {
+            System.out.println("Login failed.");
+        }
+    }
+}
